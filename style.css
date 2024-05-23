@@ -1,0 +1,284 @@
+:root {
+  --DarkCharcoal: #312e2c;
+  --DarkRaspberry: #7a284e;
+  --BrandyRed: #854632;
+  --WengeBrown: #5f564d;
+  --EggShell: #f3e5d7;
+  --WhiteCoffee: #e3ddd7;
+  --Snow: #fff7fb;
+  --White: #fff;
+  --font-family: "Outfit", sans-serif;
+  --second-family: "Young Serif", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  margin: 0;
+  font-size: 16px;
+  font-family: var(--font-family);
+  background-color: var(--EggShell);
+  min-height: 100vh;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* padding for responsiveness */
+}
+
+.container {
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 736px;
+  border-radius: 24px;
+  padding: 40px;
+  gap: 40px;
+}
+
+/*------------Top Image------*/
+.omlet {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/*-----Title------*/
+.text-context {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.title {
+  gap: 24px;
+}
+
+.title-head {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 100%;
+  color: var(--DarkCharcoal);
+}
+
+.title-description {
+  color: var(--WengeBrown);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+/*----------PreparationTime----------*/
+.preparationTime {
+  background-color: var(--Snow);
+  width: 100%;
+  border-radius: 12px;
+  padding: 28px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.preparationTimeTitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  text-decoration: underline;
+  color: var(--DarkRaspberry);
+}
+
+.preparationTimeItems {
+  gap: 8px;
+  padding-left: 16px;
+  color: var(--WengeBrown);
+}
+
+/*----------Ingredients----------*/
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ingredientsTitle {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 100%;
+  color: var(--BrandyRed);
+}
+
+.ingredientsItems {
+  padding-left: 15px;
+  color: var(--WengeBrown);
+}
+
+/*----------Instructions----------*/
+.instruction {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.instructionTitle {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 100%;
+  color: var(--BrandyRed);
+}
+
+.instructionItems {
+  padding-left: 8px;
+  list-style-type: none;
+  counter-reset: instruction-counter;
+}
+
+.instructionItems li {
+  counter-increment: instruction-counter;
+  position: relative;
+  padding-left: 30px;
+}
+
+.instructionItems li::before {
+  content: counter(instruction-counter) ". ";
+  font-size: 16px;
+  color: var(--BrandyRed);
+  text-decoration: underline;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  line-height: 150%;
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+/*----------Nutrition----------*/
+.nutrition {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.nutritionTitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--BrandyRed);
+}
+
+.nutritionDescription {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  height: auto;
+  text-align: left;
+  vertical-align: top;
+  color: var(--WengeBrown);
+}
+
+.nutritionTable {
+  width: 100%;
+  border-collapse: collapse;
+  gap: 12px;
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--WengeBrown);
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 32px;
+}
+
+.tableRow:last-of-type {
+  border-bottom: 0;
+}
+
+.tableHead {
+  color: var(--WengeBrown);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  line-height: 150%;
+}
+
+.tableData {
+  color: var(--BrandyRed);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+  line-height: 150%;
+}
+
+/*----------Footer----------*/
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*-----Media Mobile-----*/
+@media (max-width: 500px) {
+  .app {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .title-head {
+    font-size: 24px;
+  }
+
+  .title-description {
+    font-size: 14px;
+  }
+
+  .preparationTimeTitle,
+  .preparationTimeItems,
+  .ingredientsTitle,
+  .instructionTitle,
+  .nutritionTitle,
+  .nutritionDescription,
+  .tableHead,
+  .tableData {
+    font-size: 14px;
+  }
+
+  .preparationTime {
+    padding: 20px;
+  }
+
+  .ingredientsItems {
+    padding-left: 20px;
+  }
+
+  .instructionItems {
+    padding-left: 20px;
+  }
+
+  .tableRow {
+    padding: 8px 16px;
+  }
+
+  .instructionItems li::before {
+    left: -20px; /* Adjust position to make the numbers inline */
+  }
+}
